@@ -18,7 +18,7 @@ const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   let location = useLocation();
-  const ENDPOINT = "http://localhost:5000/";
+  const ENDPOINT = "https://damp-harbor-85875.herokuapp.com/";
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     setName(name);
@@ -67,13 +67,6 @@ const Chat = () => {
           setMessage={setMessage}
           sendMessage={sendMessage}
         />
-        {/* <input
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
-          onKeyPress={(event) =>
-            event.key === "Enter" ? sendMessage(event) : null
-          }
-        /> */}
       </div>
       <Active users={users} />
     </div>
