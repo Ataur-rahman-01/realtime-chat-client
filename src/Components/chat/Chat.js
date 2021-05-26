@@ -18,7 +18,7 @@ const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   let location = useLocation();
-  const ENDPOINT = "https://damp-harbor-85875.herokuapp.com/";
+  const ENDPOINT = "http://localhost:5000/";
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     setName(name);
@@ -26,7 +26,7 @@ const Chat = () => {
     socket = io(`${ENDPOINT}`, {
       withCredentials: true,
       extraHeaders: {
-        "my-custom-header": "abcd",
+        "my-custom-header": "dimkha12",
       },
     });
     console.log(socket);
